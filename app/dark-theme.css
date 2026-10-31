@@ -1,0 +1,124 @@
+/* Tulip shop — dark theme. Active when <html data-theme="dark"> (the moon/sun button in the header; the choice is remembered).
+   1) palette tokens   2) buttons & bands that are dark in light mode   3) every hard-coded light colour of globals.css,
+   mapped to a dark equivalent with the same hue. Admin has its own tokens in app/(admin)/admin.css. */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #ffeaf2;
+  --muted: #d9b9ca;
+  --paper: #1e0f18;
+  --white: #2a1521;
+  --soft: #34202c;
+  --accent-soft: #3f2336;
+  --line: #4d2a3d;
+  --accent: #ff8fb8;
+  --accent-dark: #ffc0d8;
+  --cream: #ffd6e6;
+  --espresso: #14080f;
+  --rose: #ff9ec3;
+  --blush: #3f2336;
+  --leaf: #a7b57a;
+  --gold: #ff8fb8;
+  --primary-bg: #ff8fb8; /* used by shared components such as the order editor */
+  --primary-fg: #2a0f1e;
+  --champagne: #d9a98a;
+  --shadow-pink: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 8px 28px rgba(0, 0, 0, 0.32);
+}
+
+/* ---- 2) primary buttons and badges: gold on dark instead of espresso on cream ---- */
+:root[data-theme="dark"] .button-dark,
+:root[data-theme="dark"] .add-button,
+:root[data-theme="dark"] .checkout-submit,
+:root[data-theme="dark"] .size-button.active,
+:root[data-theme="dark"] .cart-link span,
+:root[data-theme="dark"] .tracking-step.is-active span,
+:root[data-theme="dark"] .trk-btn-dark,
+:root[data-theme="dark"] .trk-steps li.is-current span,
+:root[data-theme="dark"] .product-gallery-badge,
+:root[data-theme="dark"] .sold-badge {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #2a0f1e;
+}
+:root[data-theme="dark"] .button-dark:hover,
+:root[data-theme="dark"] .add-button:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #2a0f1e; }
+
+/* ---- 3) generated from globals.css ---- */
+:root[data-theme="dark"] .utility-card { background: rgba(34, 24, 22, 0.88); }
+:root[data-theme="dark"] .stack-form input { background: #2a1521; }
+:root[data-theme="dark"] .form-error { background: #371517; color: #e6bcc5; }
+:root[data-theme="dark"] .order-result { background: #2a1521; }
+:root[data-theme="dark"] .stat-grid > div { background: #2a1521; }
+:root[data-theme="dark"] .orders-panel { background: #2a1521; }
+:root[data-theme="dark"] .cart-error { background: #371517; color: #e6bcc5; }
+:root[data-theme="dark"] .product-gallery { background: linear-gradient(135deg, var(--accent-soft), #2a1521); }
+:root[data-theme="dark"] .product-image-frame { background: #3b2030; }
+:root[data-theme="dark"] .form-success { background: #17351c; color: #bce6cd; }
+:root[data-theme="dark"] .cancel-order-button { border: 1px solid #e0aeb8; color: #e6bcc5; }
+:root[data-theme="dark"] .footer-bottom { border-top: 1px solid #4d2a3d24; color: #d9b9ca; }
+:root[data-theme="dark"] .site-header { background: #2a1521f2; }
+:root[data-theme="dark"] .site-header { background: #2a1521f2; }
+:root[data-theme="dark"] .hero-panel-image { background: #4a2840; }
+:root[data-theme="dark"] .hero-image-fallback { background: linear-gradient(135deg, #4a2840, #e0568f 55%, #5b1a3a); }
+:root[data-theme="dark"] .quick-view-close { background: #2a1521; }
+:root[data-theme="dark"] .admin-card,
+:root[data-theme="dark"] .track-card { background: #2a1521; }
+:root[data-theme="dark"] .quick-close { background: #2a1521; }
+:root[data-theme="dark"] .stock.out { color: #e2c0c4; }
+:root[data-theme="dark"] .site-header { background: #2a1521f2; }
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select,
+:root[data-theme="dark"] .stack-form input,
+:root[data-theme="dark"] .checkout-form input { background-color: #2a1521 !important; color: #ffeaf2 !important; -webkit-text-fill-color: #ffeaf2; caret-color: #ffeaf2; }
+:root[data-theme="dark"] input::placeholder,
+:root[data-theme="dark"] textarea::placeholder { color: #d9b9ca; }
+:root[data-theme="dark"] input:-webkit-autofill { -webkit-text-fill-color: #ffeaf2; }
+:root[data-theme="dark"] .size-button { background: #2a1521; }
+:root[data-theme="dark"] .trk-title { color: #ffeaf2; }
+:root[data-theme="dark"] .trk-lead { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-search input { border: 1px solid #4d2a3d; }
+:root[data-theme="dark"] .trk-btn-outline { background: #2a1521; color: #ffeaf2; }
+:root[data-theme="dark"] .trk-btn-danger { background: #2a1521; color: #e6bcbc; }
+:root[data-theme="dark"] .trk-error { background: #4a1c1c; color: #e6bcbc; }
+:root[data-theme="dark"] .trk-ok { background: #15371e; color: #bce6d0; }
+:root[data-theme="dark"] .trk-count { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-card { background: #2a1521; color: #ffeaf2; border: 1px solid #4d2a3d; }
+:root[data-theme="dark"] .trk-card-head h2 { color: #ffeaf2; }
+:root[data-theme="dark"] .trk-card-head p { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-eyebrow { color: #f7c9dc; }
+:root[data-theme="dark"] .trk-pill { background: #4a2840; color: #f7c9dc; }
+:root[data-theme="dark"] .trk-pill.trk-delivered { background: #15371e; color: #bce6d0; }
+:root[data-theme="dark"] .trk-pill.trk-cancelled { background: #4a1c1c; color: #e6bcbc; }
+:root[data-theme="dark"] .trk-steps li { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-steps li span { border: 1px solid #4d2a3d; background: #2a1521; color: #d9b9ca; }
+:root[data-theme="dark"] .trk-steps li.is-done span { border-color: #f3b8d1; }
+:root[data-theme="dark"] .trk-steps li.is-current span { border-color: #f3b8d1; }
+:root[data-theme="dark"] .trk-steps li.is-done small,
+:root[data-theme="dark"] .trk-steps li.is-current small { color: #ffeaf2; }
+:root[data-theme="dark"] .trk-items > div,
+:root[data-theme="dark"] .trk-totals > div { border-top: 1px solid #4d2a3d; color: #ffeaf2; }
+:root[data-theme="dark"] .trk-items small { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-totals span { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-total span,
+:root[data-theme="dark"] .trk-total b { color: #ffeaf2 !important; }
+:root[data-theme="dark"] .trk-manage { border-top: 1px solid #4d2a3d; }
+:root[data-theme="dark"] .trk-field { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-field input,
+:root[data-theme="dark"] .trk-field textarea,
+:root[data-theme="dark"] .trk-field select { border: 1px solid #4d2a3d; }
+:root[data-theme="dark"] .trk-field small { color: #d9b9ca; }
+:root[data-theme="dark"] .trk-back { color: #f7c9dc; }
+:root[data-theme="dark"] .success-card .order-number { border: 1px dashed #f3b8d1; background: #3b2030; color: #ffeaf2 !important; }
+:root[data-theme="dark"] .filter-tabs a.is-active { color: #ffeaf2; border-bottom: 2px solid #f3b8d1; }
+:root[data-theme="dark"] .trk-photo { border: 1px solid #4d2a3d; background: #3b2030; }
+
+/* ---- Tulip pink layer (app/tulip-pink.css): the few spots that need a dark-specific value ---- */
+:root[data-theme="dark"] .tl-btn-primary { color: var(--primary-fg); }
+:root[data-theme="dark"] .tl-step-icon { color: #3a1f2d; }
+:root[data-theme="dark"] .tl-arch { box-shadow: 0 0 0 10px var(--white), 0 0 0 11px var(--line), var(--shadow-pink); }
+:root[data-theme="dark"] .announcement.tl-marquee { background: linear-gradient(90deg, #2a0f1e, #5b1a3a 50%, #2a0f1e); }
+:root[data-theme="dark"] .badge-off { color: #2a0f1e; }
+:root[data-theme="dark"] .testimonial-initial { color: #2a0f1e; }
+:root[data-theme="dark"] .editorial-dark { background: linear-gradient(150deg, #8a2557, #5b1a3a 60%, #3a1030); }

@@ -1,0 +1,65 @@
+/* Shared by the shop and the admin. Only theme tokens (with fallbacks) are used, so light/dark both work. */
+
+/* ---------- pager ---------- */
+.avx-pager { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 26px 0 4px; }
+.avx-pager-btn {
+  display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--line, #f6cadb); background: var(--surface, var(--white, #fffafc)); color: var(--ink, #3a1f2d);
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+}
+.avx-pager-btn:hover:not(:disabled) { border-color: var(--accent, #c42f73); }
+.avx-pager-btn:active:not(:disabled) { transform: scale(0.94); }
+.avx-pager-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.avx-pager-count { min-width: 64px; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; color: var(--muted, #86687a); font-variant-numeric: tabular-nums; }
+
+/* ---------- order items editor ---------- */
+.oie { display: grid; gap: 10px; text-align: left; }
+.oie-lines { display: grid; gap: 8px; }
+.oie-line {
+  display: grid; grid-template-columns: 48px minmax(0, 1fr) auto auto auto; align-items: center; gap: 12px;
+  padding: 10px 12px; border: 1px solid var(--line, #f6cadb); border-radius: 12px;
+  background: var(--surface, var(--white, #fffafc)); color: var(--ink, #3a1f2d);
+}
+.oie-photo { width: 48px; height: 60px; border-radius: 8px; object-fit: cover; background: var(--soft, var(--surface-2, #ffe8f0)); border: 1px solid var(--line, #f6cadb); }
+.oie-line-info { display: grid; gap: 1px; min-width: 0; }
+.oie-line-info strong { overflow-wrap: anywhere; font-size: 14px; }
+.oie-line-info small { color: var(--muted, #86687a); font-size: 12px; }
+.oie-qty { display: inline-flex; align-items: center; border: 1px solid var(--line, #f6cadb); border-radius: 999px; overflow: hidden; }
+.oie-qty button { display: grid; place-items: center; width: 30px; height: 30px; border: 0; background: transparent; color: var(--ink, #3a1f2d); cursor: pointer; }
+.oie-qty button:hover:not(:disabled) { background: var(--soft, var(--surface-2, #ffe8f0)); }
+.oie-qty button:disabled { opacity: 0.3; cursor: not-allowed; }
+.oie-qty span { min-width: 26px; text-align: center; font-size: 14px; font-weight: 600; color: var(--ink, #3a1f2d); }
+.oie-price { font-size: 14px; min-width: 76px; text-align: right; color: var(--ink, #3a1f2d); }
+.oie-remove { display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: var(--muted, #86687a); cursor: pointer; }
+.oie-remove:hover:not(:disabled) { background: var(--soft, var(--surface-2, #ffe8f0)); color: #c0392b; }
+.oie-remove:disabled { opacity: 0.3; cursor: not-allowed; }
+.oie-sub { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted, #86687a); padding: 0 4px; }
+.oie-sub strong { color: var(--ink, #3a1f2d); }
+.oie-add {
+  display: grid; gap: 10px; padding: 14px; border: 1px dashed var(--accent, #c42f73); border-radius: 12px;
+  background: var(--soft, var(--bg, #ffe8f0));
+}
+.oie-add label { display: grid; gap: 5px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted, #86687a); }
+.oie-add select {
+  width: 100%; padding: 11px 12px; border: 1px solid var(--line, #f6cadb); border-radius: 10px; font-size: 14px; font-weight: 400;
+  letter-spacing: 0; text-transform: none; background-color: var(--surface, var(--white, #fffafc)) !important; color: var(--ink, #3a1f2d) !important;
+}
+.oie-note { margin: 0; font-size: 13px; color: var(--muted, #86687a); }
+.oie-add-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.oie-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; justify-self: start; padding: 10px 16px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line, #f6cadb); background: transparent; color: var(--ink, #3a1f2d);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.oie-btn:hover:not(:disabled) { border-color: var(--accent, #c42f73); }
+.oie-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.oie-btn-main { background: var(--primary-bg, var(--espresso, #3a1f2d)); color: var(--primary-fg, var(--cream, #fff5f8)); border-color: transparent; }
+.oie-btn-main:hover:not(:disabled) { opacity: 0.88; border-color: transparent; }
+@media (max-width: 560px) {
+  .oie-line { grid-template-columns: 48px minmax(0, 1fr) auto; row-gap: 8px; }
+  .oie-photo { grid-row: 1 / span 2; }
+  .oie-line-info { grid-column: 2; }
+  .oie-remove { grid-column: 3; grid-row: 1; }
+  .oie-qty { grid-column: 2; grid-row: 2; justify-self: start; }
+  .oie-price { grid-column: 3; grid-row: 2; justify-self: end; text-align: right; }
+}
