@@ -1,4 +1,5 @@
 import { Cormorant_Garamond, Jost } from "next/font/google"
+import Script from "next/script"
 import "./admin.css"
 import { themeScript } from "@/lib/theme"
 
@@ -19,7 +20,7 @@ export default function AdminRootLayout({ children }: Readonly<{ children: React
   return (
     <html lang="en" data-theme="light" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="adm">{children}</body>
     </html>

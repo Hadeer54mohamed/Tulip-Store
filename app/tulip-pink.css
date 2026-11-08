@@ -551,9 +551,6 @@ h3 {
 .quick-modal {
   border-radius: 28px;
 }
-.quick-modal {
-  overflow: hidden;
-}
 .avx-pager-btn,
 .collections-arrows .avx-pager-btn {
   background: var(--white);

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import Script from "next/script"
 import { Cormorant_Garamond, Jost, Pinyon_Script } from "next/font/google"
 import "../globals.css"
 import "../home-sections.css"
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-theme="light" className={`${display.variable} ${body.variable} ${script.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Script id="theme-init" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
         <CartProvider>

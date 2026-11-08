@@ -169,7 +169,7 @@ export function QuickView({
           <p className="eyebrow">Quick view</p>
           <h2>{product.name}</h2>
           <p className="quick-price">
-            {fmt(product.price)} EGP
+            <strong>{fmt(product.price)} EGP</strong>
             {off > 0 && <del>{fmt(product.originalPrice)} EGP</del>}
           </p>
           <p className="quick-description">{product.description || "Gentle skincare for your daily routine."}</p>
